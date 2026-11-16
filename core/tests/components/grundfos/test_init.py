@@ -41,8 +41,10 @@ async def test_device_names_the_product(
     device_registry: dr.DeviceRegistry,
 ) -> None:
     """The device takes its model from the module's unit family and type."""
-    device = device_registry.async_get_device({(DOMAIN, init_integration.entry_id)})
-    assert device is not None
+    [device] = dr.async_entries_for_config_entry(
+        device_registry, init_integration.entry_id
+    )
+    assert (DOMAIN, init_integration.entry_id) in device.identifiers
     assert device.manufacturer == "Grundfos"
     assert device.model == "MAGNA3"
     assert device.sw_version is None  # the module reports no software version
