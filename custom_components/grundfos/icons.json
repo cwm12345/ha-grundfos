@@ -1,0 +1,110 @@
+{
+  "entity": {
+    "binary_sensor": {
+      "running": {
+        "default": "mdi:pump-off",
+        "state": {
+          "on": "mdi:pump"
+        }
+      },
+      "started": {
+        "default": "mdi:power"
+      },
+      "remote_control": {
+        "default": "mdi:remote"
+      },
+      "at_max_speed": {
+        "default": "mdi:speedometer"
+      },
+      "at_min_speed": {
+        "default": "mdi:speedometer-slow"
+      },
+      "at_max_power": {
+        "default": "mdi:flash"
+      },
+      "low_flow_stop": {
+        "default": "mdi:water-off"
+      }
+    },
+    "sensor": {
+      "flow": {
+        "default": "mdi:waves-arrow-right"
+      },
+      "head": {
+        "default": "mdi:arrow-collapse-up"
+      },
+      "speed": {
+        "default": "mdi:rotate-right"
+      },
+      "relative_performance": {
+        "default": "mdi:gauge"
+      },
+      "control_mode": {
+        "default": "mdi:tune-variant"
+      },
+      "operation_mode": {
+        "default": "mdi:cog"
+      },
+      "alarm": {
+        "default": "mdi:alert-circle"
+      },
+      "warning": {
+        "default": "mdi:alert"
+      },
+      "alarm_code": {
+        "default": "mdi:alert-circle-outline"
+      },
+      "warning_code": {
+        "default": "mdi:alert-outline"
+      },
+      "user_setpoint": {
+        "default": "mdi:target"
+      },
+      "actual_setpoint": {
+        "default": "mdi:target"
+      },
+      "process_feedback": {
+        "default": "mdi:sine-wave"
+      },
+      "control_source": {
+        "default": "mdi:gesture-tap"
+      },
+      "flow_estimation": {
+        "default": "mdi:chart-bell-curve"
+      },
+      "specific_energy": {
+        "default": "mdi:lightning-bolt-outline"
+      },
+      "operating_hours": {
+        "default": "mdi:timer-outline"
+      },
+      "powered_hours": {
+        "default": "mdi:timer-outline"
+      },
+      "starts": {
+        "default": "mdi:counter"
+      },
+      "pumped_volume": {
+        "default": "mdi:water"
+      },
+      "max_flow_limit": {
+        "default": "mdi:waves-arrow-up"
+      },
+      "remote_flow": {
+        "default": "mdi:waves-arrow-right"
+      },
+      "load": {
+        "default": "mdi:gauge"
+      },
+      "heat_power": {
+        "default": "mdi:radiator"
+      },
+      "heat_energy": {
+        "default": "mdi:radiator"
+      },
+      "heat_differential_temperature": {
+        "default": "mdi:thermometer-lines"
+      }
+    }
+  }
+}

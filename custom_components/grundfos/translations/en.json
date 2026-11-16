@@ -1,0 +1,381 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "Device is already configured"
+    },
+    "error": {
+      "cannot_connect": "Failed to connect"
+    },
+    "step": {
+      "user": {
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "unit_id": "Modbus unit ID"
+        },
+        "data_description": {
+          "host": "The CIM 500's Modbus TCP address (set on its Real Time Ethernet Protocol page, separate from its web server address), or the Modbus TCP gateway a CIM 200 is wired to.",
+          "port": "The Modbus TCP port, 502 on a CIM 500.",
+          "unit_id": "A CIM 500 ignores it; leave it at 1. For a CIM 200 behind a gateway, the module's Modbus address."
+        },
+        "description": "Connect to a Grundfos pump (MAGNA3, MGE-motor E-pump or CUE drive) through a CIM 500 Modbus TCP module, or a CIM 200 behind a Modbus TCP gateway. The pump must be powered: the module gets its power from the pump."
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "running": {
+        "name": "Running"
+      },
+      "started": {
+        "name": "Started"
+      },
+      "alarm_active": {
+        "name": "Alarm active"
+      },
+      "warning_active": {
+        "name": "Warning active"
+      },
+      "remote_control": {
+        "name": "Remote control"
+      },
+      "at_max_speed": {
+        "name": "At maximum speed"
+      },
+      "at_min_speed": {
+        "name": "At minimum speed"
+      },
+      "at_max_power": {
+        "name": "At maximum power"
+      },
+      "low_flow_stop": {
+        "name": "Low-flow stop"
+      }
+    },
+    "sensor": {
+      "liquid_temperature": {
+        "name": "Liquid temperature"
+      },
+      "flow": {
+        "name": "Flow"
+      },
+      "head": {
+        "name": "Head"
+      },
+      "power": {
+        "name": "Power"
+      },
+      "energy": {
+        "name": "Energy"
+      },
+      "speed": {
+        "name": "Speed"
+      },
+      "relative_performance": {
+        "name": "Relative performance"
+      },
+      "control_mode": {
+        "name": "Control mode",
+        "state": {
+          "constant_speed": "Constant speed",
+          "constant_frequency": "Constant frequency",
+          "constant_head": "Constant head",
+          "constant_pressure": "Constant pressure",
+          "constant_differential_pressure": "Constant differential pressure",
+          "proportional_pressure": "Proportional pressure",
+          "constant_flow": "Constant flow",
+          "constant_temperature": "Constant temperature",
+          "constant_differential_temperature": "Constant differential temperature",
+          "constant_level": "Constant level",
+          "autoadapt": "AUTOADAPT",
+          "flowadapt": "FLOWADAPT",
+          "closed_loop_sensor": "Closed loop sensor",
+          "autoadapt_constant_pressure": "AUTOADAPT (constant pressure)"
+        }
+      },
+      "operation_mode": {
+        "name": "Operating mode",
+        "state": {
+          "auto_control": "Auto control",
+          "open_loop_min": "Minimum curve",
+          "open_loop_max": "Maximum curve",
+          "user_curve": "User curve",
+          "stop_button": "Stop button",
+          "hand_mode": "Hand mode"
+        }
+      },
+      "alarm": {
+        "name": "Alarm",
+        "state": {
+          "none": "None",
+          "leakage_current": "Leakage current",
+          "missing_phase": "Missing phase",
+          "external_fault_signal": "External fault signal",
+          "too_many_restarts": "Too many restarts",
+          "too_many_hardware_shutdowns": "Too many hardware shutdowns",
+          "dc_link_protection": "DC-link protection",
+          "other": "Other",
+          "turbine_operation": "Turbine operation",
+          "change_bearings": "Change bearings",
+          "change_varistors": "Change varistors",
+          "overvoltage": "Overvoltage",
+          "undervoltage": "Undervoltage",
+          "undervoltage_transient": "Undervoltage transient",
+          "cut_in_fault": "Cut-in fault",
+          "voltage_asymmetry": "Voltage asymmetry",
+          "overload": "Overload",
+          "overcurrent": "Overcurrent",
+          "motor_protection_shutdown": "Motor protection shutdown",
+          "blocked_motor_or_pump": "Blocked motor or pump",
+          "motor_protection_3_second_limit": "Motor protection 3-second limit",
+          "motor_current_protection": "Motor current protection",
+          "underload": "Underload",
+          "dry_running": "Dry running",
+          "low_input_power": "Low input power",
+          "safe_torque_off": "Safe torque off",
+          "overtemperature": "Overtemperature",
+          "motor_temperature_1": "Motor temperature 1",
+          "control_electronics_temperature_high": "Control electronics temperature high",
+          "frequency_converter_temperature_high": "Frequency converter temperature high",
+          "water_temperature_high": "Water temperature high",
+          "motor_thermal_relay_2": "Motor thermal relay 2",
+          "hardware_fault_type_1": "Hardware fault (type 1)",
+          "hardware_shutdown": "Hardware shutdown",
+          "internal_communication_fault": "Internal communication fault",
+          "twin_head_communication_fault": "Twin-head communication fault",
+          "hardware_fault_type_2": "Hardware fault (type 2)",
+          "fe_parameter_verification_error": "FE parameter verification error",
+          "memory_access_error": "Memory access error",
+          "be_parameter_verification_error": "BE parameter verification error",
+          "sensor_fault": "Sensor fault",
+          "feedback_sensor_1_signal_fault": "Feedback sensor 1 signal fault",
+          "temperature_1_sensor_signal_fault": "Temperature 1 sensor signal fault",
+          "sensor_2_signal_fault": "Sensor 2 signal fault",
+          "setpoint_signal_out_of_range": "Setpoint signal out of range",
+          "rectifier_protection": "Rectifier protection",
+          "inverter_protection": "Inverter protection",
+          "gds_sensor_signal_fault": "GDS sensor signal fault",
+          "bearing_temperature_high_drive_end": "Bearing temperature high (drive end)",
+          "bearing_temperature_high_non_drive_end": "Bearing temperature high (non-drive end)",
+          "inrush_fault": "Inrush fault",
+          "frequency_converter_communication_fault": "Frequency converter communication fault",
+          "real_time_clock_error": "Real time clock error",
+          "cim_lost_connection": "CIM lost connection to the pump",
+          "sensor_supply_fault_5v": "Sensor supply fault (5 V)",
+          "sensor_supply_fault_24v": "Sensor supply fault (24 V)",
+          "motor_protection_measurement_fault": "Motor protection measurement fault",
+          "liqtec_sensor_signal_fault": "LiqTec sensor signal fault",
+          "analog_input_1_signal_fault": "Analog input 1 signal fault",
+          "analog_input_2_signal_fault": "Analog input 2 signal fault",
+          "analog_input_3_signal_fault": "Analog input 3 signal fault",
+          "temperature_sensor_2_signal_fault": "Temperature sensor 2 signal fault",
+          "temperature_sensor_3_signal_fault": "Temperature sensor 3 signal fault",
+          "sensor_1_limit_exceeded": "Sensor 1 limit exceeded",
+          "sensor_2_limit_exceeded": "Sensor 2 limit exceeded",
+          "non_return_valve_fault": "Non-return valve fault",
+          "soft_pressure_buildup_timeout": "Soft pressure buildup timeout",
+          "lubricate_bearings": "Lubricate bearings",
+          "motor_phase_failure": "Motor phase failure",
+          "motor_model_recognition_failed": "Motor model recognition failed"
+        }
+      },
+      "warning": {
+        "name": "Warning",
+        "state": {
+          "none": "None",
+          "leakage_current": "Leakage current",
+          "missing_phase": "Missing phase",
+          "external_fault_signal": "External fault signal",
+          "too_many_restarts": "Too many restarts",
+          "too_many_hardware_shutdowns": "Too many hardware shutdowns",
+          "dc_link_protection": "DC-link protection",
+          "other": "Other",
+          "turbine_operation": "Turbine operation",
+          "change_bearings": "Change bearings",
+          "change_varistors": "Change varistors",
+          "overvoltage": "Overvoltage",
+          "undervoltage": "Undervoltage",
+          "undervoltage_transient": "Undervoltage transient",
+          "cut_in_fault": "Cut-in fault",
+          "voltage_asymmetry": "Voltage asymmetry",
+          "overload": "Overload",
+          "overcurrent": "Overcurrent",
+          "motor_protection_shutdown": "Motor protection shutdown",
+          "blocked_motor_or_pump": "Blocked motor or pump",
+          "motor_protection_3_second_limit": "Motor protection 3-second limit",
+          "motor_current_protection": "Motor current protection",
+          "underload": "Underload",
+          "dry_running": "Dry running",
+          "low_input_power": "Low input power",
+          "safe_torque_off": "Safe torque off",
+          "overtemperature": "Overtemperature",
+          "motor_temperature_1": "Motor temperature 1",
+          "control_electronics_temperature_high": "Control electronics temperature high",
+          "frequency_converter_temperature_high": "Frequency converter temperature high",
+          "water_temperature_high": "Water temperature high",
+          "motor_thermal_relay_2": "Motor thermal relay 2",
+          "hardware_fault_type_1": "Hardware fault (type 1)",
+          "hardware_shutdown": "Hardware shutdown",
+          "internal_communication_fault": "Internal communication fault",
+          "twin_head_communication_fault": "Twin-head communication fault",
+          "hardware_fault_type_2": "Hardware fault (type 2)",
+          "fe_parameter_verification_error": "FE parameter verification error",
+          "memory_access_error": "Memory access error",
+          "be_parameter_verification_error": "BE parameter verification error",
+          "sensor_fault": "Sensor fault",
+          "feedback_sensor_1_signal_fault": "Feedback sensor 1 signal fault",
+          "temperature_1_sensor_signal_fault": "Temperature 1 sensor signal fault",
+          "sensor_2_signal_fault": "Sensor 2 signal fault",
+          "setpoint_signal_out_of_range": "Setpoint signal out of range",
+          "rectifier_protection": "Rectifier protection",
+          "inverter_protection": "Inverter protection",
+          "gds_sensor_signal_fault": "GDS sensor signal fault",
+          "bearing_temperature_high_drive_end": "Bearing temperature high (drive end)",
+          "bearing_temperature_high_non_drive_end": "Bearing temperature high (non-drive end)",
+          "inrush_fault": "Inrush fault",
+          "frequency_converter_communication_fault": "Frequency converter communication fault",
+          "real_time_clock_error": "Real time clock error",
+          "cim_lost_connection": "CIM lost connection to the pump",
+          "sensor_supply_fault_5v": "Sensor supply fault (5 V)",
+          "sensor_supply_fault_24v": "Sensor supply fault (24 V)",
+          "motor_protection_measurement_fault": "Motor protection measurement fault",
+          "liqtec_sensor_signal_fault": "LiqTec sensor signal fault",
+          "analog_input_1_signal_fault": "Analog input 1 signal fault",
+          "analog_input_2_signal_fault": "Analog input 2 signal fault",
+          "analog_input_3_signal_fault": "Analog input 3 signal fault",
+          "temperature_sensor_2_signal_fault": "Temperature sensor 2 signal fault",
+          "temperature_sensor_3_signal_fault": "Temperature sensor 3 signal fault",
+          "sensor_1_limit_exceeded": "Sensor 1 limit exceeded",
+          "sensor_2_limit_exceeded": "Sensor 2 limit exceeded",
+          "non_return_valve_fault": "Non-return valve fault",
+          "soft_pressure_buildup_timeout": "Soft pressure buildup timeout",
+          "lubricate_bearings": "Lubricate bearings",
+          "motor_phase_failure": "Motor phase failure",
+          "motor_model_recognition_failed": "Motor model recognition failed"
+        }
+      },
+      "user_setpoint": {
+        "name": "User setpoint"
+      },
+      "actual_setpoint": {
+        "name": "Actual setpoint"
+      },
+      "process_feedback": {
+        "name": "Process feedback"
+      },
+      "control_source": {
+        "name": "Control source",
+        "state": {
+          "display": "Display",
+          "bus": "Bus",
+          "go_app": "Grundfos GO app",
+          "digital_input": "Digital input",
+          "off_button": "Off button"
+        }
+      },
+      "flow_estimation": {
+        "name": "Flow estimation",
+        "state": {
+          "within_range": "Within range",
+          "below_range": "Below range",
+          "above_range": "Above range"
+        }
+      },
+      "electronics_temperature": {
+        "name": "Electronics temperature"
+      },
+      "motor_current": {
+        "name": "Motor current"
+      },
+      "dc_link_voltage": {
+        "name": "DC-link voltage"
+      },
+      "frequency": {
+        "name": "Motor frequency"
+      },
+      "specific_energy": {
+        "name": "Specific energy"
+      },
+      "operating_hours": {
+        "name": "Operating hours"
+      },
+      "powered_hours": {
+        "name": "Powered hours"
+      },
+      "starts": {
+        "name": "Starts"
+      },
+      "pumped_volume": {
+        "name": "Pumped volume"
+      },
+      "max_flow_limit": {
+        "name": "Maximum flow limit"
+      },
+      "alarm_code": {
+        "name": "Alarm code"
+      },
+      "warning_code": {
+        "name": "Warning code"
+      },
+      "differential_pressure": {
+        "name": "Differential pressure"
+      },
+      "inlet_pressure": {
+        "name": "Inlet pressure"
+      },
+      "outlet_pressure": {
+        "name": "Outlet pressure"
+      },
+      "remote_pressure_1": {
+        "name": "Remote pressure 1"
+      },
+      "remote_pressure_2": {
+        "name": "Remote pressure 2"
+      },
+      "remote_flow": {
+        "name": "Remote flow"
+      },
+      "remote_temperature_1": {
+        "name": "Remote temperature 1"
+      },
+      "remote_temperature_2": {
+        "name": "Remote temperature 2"
+      },
+      "ambient_temperature": {
+        "name": "Ambient temperature"
+      },
+      "motor_temperature": {
+        "name": "Motor temperature"
+      },
+      "power_electronics_temperature": {
+        "name": "Power electronics temperature"
+      },
+      "feed_tank_level": {
+        "name": "Feed tank level"
+      },
+      "motor_voltage": {
+        "name": "Motor voltage"
+      },
+      "load": {
+        "name": "Motor load"
+      },
+      "heat_power": {
+        "name": "Heat power"
+      },
+      "heat_energy": {
+        "name": "Heat energy"
+      },
+      "heat_differential_temperature": {
+        "name": "Heat differential temperature"
+      }
+    }
+  },
+  "exceptions": {
+    "modbus_error": {
+      "message": "Could not reach the pump: {error}"
+    },
+    "no_component_answered": {
+      "message": "The pump did not answer any register block"
+    }
+  }
+}
