@@ -31,9 +31,28 @@ Tested on one MAGNA3 40-80 F with a CIM 500.
   pump is off. That's expected; it isn't a fault. Set the integration up while
   the pump is running.
 
+## Installation
+
+**With HACS** (recommended, so you're told about updates):
+
+1. In Home Assistant, open **HACS**, then the **⋮** menu (top right) →
+   **Custom repositories**.
+2. Repository: `https://github.com/cwm12345/ha-grundfos`, type:
+   **Integration**. Click **Add**.
+3. Search HACS for **Grundfos**, open it and click **Download**.
+4. Restart Home Assistant.
+
+**Manually:** copy the `custom_components/grundfos` folder from this
+repository into your Home Assistant `config/custom_components/` folder (create
+`custom_components` if it doesn't exist), then restart Home Assistant.
+
+You don't need to install the `grundfos-modbus` library separately; a copy is
+included in `custom_components/grundfos`.
+
 ## Setup
 
-Settings → Devices & services → Add integration → Grundfos, then give:
+With the pump running, go to Settings → Devices & services → Add integration →
+Grundfos, then give:
 
 - the module's Modbus TCP address and port (502);
 - the unit ID (a CIM 500 ignores it; leave it at 1).
